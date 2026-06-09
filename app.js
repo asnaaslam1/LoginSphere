@@ -1,42 +1,77 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-/* REGISTER */
-function register() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+function register(){
 
-  if (!name || !email || !password) {
-    alert("Please fill all fields");
-    return;
-  }
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-  users.push({ name, email, password });
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("Registered Successfully!");
-  window.location.href = "login.html";
+if(!name || !email || !password){
+alert("Please fill all fields");
+return;
 }
 
-/* LOGIN */
-function login() {
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+const exists = users.find(
+user => user.email === email
+);
 
-  let user = users.find(
-    u => u.email === email && u.password === password
-  );
-
-  if (user) {
-    localStorage.setItem("user", user.name);
-    window.location.href = "dashboard.html";
-  } else {
-    alert("Invalid Email or Password");
-  }
+if(exists){
+alert("Email already exists");
+return;
 }
 
-/* LOGOUT */
-function logout() {
-  localStorage.removeItem("user");
-  window.location.href = "login.html";
+users.push({
+name,
+email,
+password
+});
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+alert("Registration Successful");
+
+window.location.href="index.html";
+}
+
+function login(){
+
+const email =
+document.getElementById("loginEmail").value;
+
+const password =
+document.getElementById("loginPassword").value;
+
+const user = users.find(
+u => u.email === email &&
+u.password === password
+);
+
+if(user){
+
+localStorage.setItem(
+"currentUser",
+user.name
+);
+
+window.location.href =
+"dashboard.html";
+
+}else{
+
+alert("Invalid Email or Password");
+
+}
+}
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
 }

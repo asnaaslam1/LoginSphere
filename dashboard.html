@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Dashboard</title>
+<meta charset="UTF-8">
+<title>LoginSphere Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Dashboard</h1>
+<div class="container">
 
-<h2 id="user"></h2>
+    <h1>Dashboard</h1>
 
-<button onclick="logout()">Logout</button>
+    <h3 id="welcome"></h3>
+
+    <button onclick="logout()">Logout</button>
+
+</div>
 
 <script>
-if (!localStorage.getItem("user")) {
-  window.location.href = "login.html";
+const user = localStorage.getItem("currentUser");
+
+if(!user){
+    window.location.href = "index.html";
 }
 
-document.getElementById("user").innerText =
-  "Welcome " + localStorage.getItem("user");
-
-function logout() {
-  localStorage.removeItem("user");
-  window.location.href = "login.html";
-}
+document.getElementById("welcome").innerHTML =
+"Welcome to LoginSphere, " + user;
 </script>
 
 </body>
-</html>
+</html>S

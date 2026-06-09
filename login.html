@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoginSphere - Login</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h2>Login</h2>
+<div class="container">
+    <h1>LoginSphere</h1>
+    <p>Secure Login Portal</p>
 
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
 
-<button onclick="login()">Login</button>
+    <button onclick="login()">Login</button>
+
+    <p>
+        New User?
+        <a href="register.html">Create Account</a>
+    </p>
+</div>
 
 <script src="app.js"></script>
 
