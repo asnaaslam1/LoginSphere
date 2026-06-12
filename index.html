@@ -13,26 +13,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
+<!-- NAVBAR -->
 <header>
 <nav class="navbar">
 
 <div class="logo">
-<i class="fa-solid fa-user-shield"></i>
-LoginSphere
+<img src="assets/Picture-1.png" alt="Logo">
 </div>
 
 <ul class="menu">
 <li><a href="#">Home</a></li>
 <li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
 <li><a href="#">Contact</a></li>
 </ul>
 
 </nav>
 </header>
 
+<!-- MAIN CONTAINER -->
 <div class="container">
 
-<div class="form-box" id="login">
+<!-- LOGIN -->
+<div class="form-box" id="loginBox">
 
 <h2>Login</h2>
 
@@ -46,25 +49,25 @@ LoginSphere
 <input type="password" placeholder="Password">
 </div>
 
-<div class="extra">
+<div class="options">
 <label>
-<input type="checkbox">
-Remember Me
+<input type="checkbox"> Remember Me
 </label>
 
 <a href="#">Forgot Password?</a>
 </div>
 
-<button class="btn">Login</button>
+<button class="btn" onclick="login()">Login</button>
 
 <p>
-Don't have an account?
+Don’t have an account?
 <a href="#" onclick="showRegister()">Register</a>
 </p>
 
 </div>
 
-<div class="form-box hide" id="register">
+<!-- REGISTER -->
+<div class="form-box hide" id="registerBox">
 
 <h2>Registration</h2>
 
@@ -88,7 +91,7 @@ Don't have an account?
 I agree to the Terms & Conditions
 </label>
 
-<button class="btn">Register</button>
+<button class="btn" onclick="register()">Register</button>
 
 <p>
 Already have an account?
@@ -99,7 +102,7 @@ Already have an account?
 
 </div>
 
-<script src="js.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
