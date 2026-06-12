@@ -26,16 +26,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <li><a href="#">About</a></li>
 <li><a href="#">Services</a></li>
 <li><a href="#">Contact</a></li>
+<li><button class="login-btn" onclick="openLogin()">Login</button></li>
 </ul>
 
 </nav>
 </header>
 
-<!-- MAIN CONTAINER -->
-<div class="container">
+<!-- BACKGROUND -->
+<div class="hero"></div>
+
+<!-- LOGIN MODAL -->
+<div class="overlay" id="overlay">
+
+<div class="modal">
 
 <!-- LOGIN -->
-<div class="form-box" id="loginBox">
+<div id="loginBox">
 
 <h2>Login</h2>
 
@@ -50,24 +56,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </div>
 
 <div class="options">
-<label>
-<input type="checkbox"> Remember Me
-</label>
-
-<a href="#">Forgot Password?</a>
+<label><input type="checkbox"> Remember Me</label>
+<a href="#" onclick="showForgot()">Forgot Password?</a>
 </div>
 
-<button class="btn" onclick="login()">Login</button>
+<button class="btn">Login</button>
 
 <p>
-Don’t have an account?
+Don’t have account?
 <a href="#" onclick="showRegister()">Register</a>
 </p>
 
 </div>
 
 <!-- REGISTER -->
-<div class="form-box hide" id="registerBox">
+<div id="registerBox" class="hide">
 
 <h2>Registration</h2>
 
@@ -88,18 +91,38 @@ Don’t have an account?
 
 <label class="terms">
 <input type="checkbox">
-I agree to the Terms & Conditions
+I agree to Terms & Conditions
 </label>
 
-<button class="btn" onclick="register()">Register</button>
+<button class="btn">Register</button>
 
 <p>
-Already have an account?
+Already have account?
 <a href="#" onclick="showLogin()">Login</a>
 </p>
 
 </div>
 
+<!-- FORGOT PASSWORD -->
+<div id="forgotBox" class="hide">
+
+<h2>Reset Password</h2>
+
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" placeholder="Enter Email">
+</div>
+
+<button class="btn">Send Reset Link</button>
+
+<p>
+Back to
+<a href="#" onclick="showLogin()">Login</a>
+</p>
+
+</div>
+
+</div>
 </div>
 
 <script src="script.js"></script>

@@ -5,11 +5,13 @@ box-sizing:border-box;
 font-family:Arial;
 }
 
-body{
+/* BACKGROUND */
+.hero{
 background:url("assets/Picture-2.jpg");
 background-size:cover;
 background-position:center;
 height:100vh;
+filter:blur(0px);
 }
 
 /* NAVBAR */
@@ -19,80 +21,90 @@ justify-content:space-between;
 align-items:center;
 padding:15px 60px;
 background:rgba(0,0,0,0.7);
+position:absolute;
+width:100%;
+top:0;
 }
 
 .logo img{
-height:55px;
+height:50px;
 }
 
 .menu{
 display:flex;
-gap:25px;
+gap:20px;
 list-style:none;
+align-items:center;
 }
 
 .menu a{
 color:white;
 text-decoration:none;
+}
+
+.login-btn{
+padding:8px 15px;
+background:gold;
+border:none;
+cursor:pointer;
 font-weight:bold;
+border-radius:5px;
 }
 
-.menu a:hover{
-color:gold;
-}
-
-/* CONTAINER */
-.container{
-display:flex;
+/* OVERLAY BLUR */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(5px);
+display:none;
 justify-content:center;
 align-items:center;
-height:85vh;
 }
 
-/* FORM */
-.form-box{
-width:380px;
+/* MODAL */
+.modal{
 background:white;
-padding:30px;
-border-radius:12px;
+width:380px;
+padding:25px;
+border-radius:10px;
 box-shadow:0 0 20px rgba(0,0,0,0.3);
 }
 
-.form-box h2{
+.modal h2{
 text-align:center;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
-/* INPUT */
 .input-box{
 display:flex;
 align-items:center;
 border:1px solid #ccc;
 padding:10px;
+margin-bottom:12px;
 border-radius:6px;
-margin-bottom:15px;
 }
 
 .input-box i{
 margin-right:10px;
-color:#555;
 }
 
 .input-box input{
+width:100%;
 border:none;
 outline:none;
-width:100%;
 }
 
-/* OPTIONS */
 .options{
 display:flex;
 justify-content:space-between;
-font-size:14px;
-margin-bottom:15px;
+font-size:13px;
+margin-bottom:10px;
 }
 
-/* BUTTON */
 .btn{
 width:100%;
 padding:12px;
@@ -107,25 +119,22 @@ cursor:pointer;
 background:#333;
 }
 
-/* TEXT */
-.form-box p{
+.modal p{
 text-align:center;
-margin-top:15px;
+margin-top:10px;
 }
 
-.form-box a{
+.modal a{
 color:blue;
-text-decoration:none;
+cursor:pointer;
 }
 
-/* TERMS */
 .terms{
 display:block;
-margin-bottom:15px;
-font-size:14px;
+margin-bottom:10px;
+font-size:13px;
 }
 
-/* HIDE */
 .hide{
 display:none;
 }
