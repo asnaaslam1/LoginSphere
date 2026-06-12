@@ -13,35 +13,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-<!-- NAVBAR -->
 <header>
 <nav class="navbar">
 
 <div class="logo">
-<img src="assets/Picture-1.png" alt="Logo">
+<i class="fa-solid fa-user-shield"></i>
+LoginSphere
 </div>
 
 <ul class="menu">
 <li><a href="#">Home</a></li>
 <li><a href="#">About</a></li>
-<li><a href="#">Services</a></li>
 <li><a href="#">Contact</a></li>
-<li><button class="login-btn" onclick="openLogin()">Login</button></li>
 </ul>
 
 </nav>
 </header>
 
-<!-- BACKGROUND -->
-<div class="bg"></div>
+<div class="container">
 
-<!-- MODAL OVERLAY -->
-<div class="overlay" id="overlay">
-
-<div class="modal">
-
-<!-- LOGIN -->
-<div id="loginBox">
+<div class="form-box" id="login">
 
 <h2>Login</h2>
 
@@ -55,22 +46,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <input type="password" placeholder="Password">
 </div>
 
-<div class="options">
-<label><input type="checkbox"> Remember Me</label>
-<a href="#" onclick="showForgot()">Forgot Password?</a>
+<div class="extra">
+<label>
+<input type="checkbox">
+Remember Me
+</label>
+
+<a href="#">Forgot Password?</a>
 </div>
 
 <button class="btn">Login</button>
 
 <p>
-Don’t have an account?
+Don't have an account?
 <a href="#" onclick="showRegister()">Register</a>
 </p>
 
 </div>
 
-<!-- REGISTER -->
-<div id="registerBox" class="hide">
+<div class="form-box hide" id="register">
 
 <h2>Registration</h2>
 
@@ -91,40 +85,21 @@ Don’t have an account?
 
 <label class="terms">
 <input type="checkbox">
-I agree to Terms & Conditions
+I agree to the Terms & Conditions
 </label>
 
 <button class="btn">Register</button>
 
 <p>
-Already have account?
+Already have an account?
 <a href="#" onclick="showLogin()">Login</a>
 </p>
 
 </div>
 
-<!-- FORGOT -->
-<div id="forgotBox" class="hide">
-
-<h2>Forgot Password</h2>
-
-<div class="input-box">
-<i class="fa-solid fa-envelope"></i>
-<input type="email" placeholder="Enter Email">
 </div>
 
-<button class="btn">Send Reset Link</button>
-
-<p>
-Back to <a href="#" onclick="showLogin()">Login</a>
-</p>
-
-</div>
-
-</div>
-</div>
-
-<script src="script.js"></script>
+<script src="js.js"></script>
 
 </body>
 </html>
