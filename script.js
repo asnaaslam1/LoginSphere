@@ -1,20 +1,20 @@
 function hideAll(){
-document.querySelectorAll(".card").forEach(card=>{
-card.classList.remove("active");
+document.querySelectorAll(".card").forEach(c=>{
+c.classList.remove("active");
 });
 }
 
 function showLogin(){
 hideAll();
-document.getElementById("loginBox").classList.add("active");
+document.getElementById("login").classList.add("active");
 }
 
 function showRegister(){
 hideAll();
-document.getElementById("registerBox").classList.add("active");
+document.getElementById("register").classList.add("active");
 }
 
 function showForgot(){
 hideAll();
-document.getElementById("forgotBox").classList.add("active");
+document.getElementById("forgot").classList.add("active");
 }

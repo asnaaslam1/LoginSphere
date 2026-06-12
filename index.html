@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoginSphere</title>
+<title>LoginSphere Ultimate</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -17,15 +16,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <header class="navbar">
 
 <div class="logo">
-<img src="assets/Picture-1.png" alt="Logo">
+<img src="assets/Picture-1.png">
 </div>
 
-<nav class="menu">
+<nav>
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Services</a>
 <a href="#">Contact</a>
-<button class="login-btn" onclick="showLogin()">Login</button>
+<button onclick="showLogin()">Login</button>
 </nav>
 
 </header>
@@ -33,89 +32,90 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <!-- BACKGROUND -->
 <div class="bg"></div>
 
-<!-- AUTH CONTAINER -->
+<!-- CENTER WRAPPER -->
 <div class="container">
 
 <!-- LOGIN -->
-<section id="loginBox" class="card active">
+<div class="card active" id="login">
 
-<h2>Login</h2>
+<h2>Welcome Back</h2>
+<p>Login to continue</p>
 
-<div class="input-box">
+<div class="input">
 <i class="fa-solid fa-envelope"></i>
 <input type="email" placeholder="Email">
 </div>
 
-<div class="input-box">
+<div class="input">
 <i class="fa-solid fa-lock"></i>
 <input type="password" placeholder="Password">
 </div>
 
 <div class="row">
 <label><input type="checkbox"> Remember me</label>
-<a onclick="showForgot()">Forgot Password?</a>
+<a onclick="showForgot()">Forgot?</a>
 </div>
 
 <button class="btn">Login</button>
 
-<p class="switch">
-Don’t have an account?
+<p class="text">
+Don’t have account?
 <a onclick="showRegister()">Register</a>
 </p>
 
-</section>
+</div>
 
 <!-- REGISTER -->
-<section id="registerBox" class="card">
+<div class="card" id="register">
 
-<h2>Registration</h2>
+<h2>Create Account</h2>
+<p>Join us today</p>
 
-<div class="input-box">
+<div class="input">
 <i class="fa-solid fa-user"></i>
 <input type="text" placeholder="Username">
 </div>
 
-<div class="input-box">
+<div class="input">
 <i class="fa-solid fa-envelope"></i>
 <input type="email" placeholder="Email">
 </div>
 
-<div class="input-box">
+<div class="input">
 <i class="fa-solid fa-lock"></i>
 <input type="password" placeholder="Password">
 </div>
 
 <label class="terms">
-<input type="checkbox">
-I agree to Terms & Conditions
+<input type="checkbox"> I agree to Terms & Conditions
 </label>
 
 <button class="btn">Register</button>
 
-<p class="switch">
-Already have an account?
+<p class="text">
+Already have account?
 <a onclick="showLogin()">Login</a>
 </p>
 
-</section>
+</div>
 
 <!-- FORGOT -->
-<section id="forgotBox" class="card">
+<div class="card" id="forgot">
 
 <h2>Reset Password</h2>
 
-<div class="input-box">
+<div class="input">
 <i class="fa-solid fa-envelope"></i>
 <input type="email" placeholder="Enter Email">
 </div>
 
 <button class="btn">Send Reset Link</button>
 
-<p class="switch">
+<p class="text">
 Back to <a onclick="showLogin()">Login</a>
 </p>
 
-</section>
+</div>
 
 </div>
 
