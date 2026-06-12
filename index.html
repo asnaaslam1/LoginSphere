@@ -1,27 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Login System</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Register UI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<div class="container">
+<!-- HEADER -->
+<header class="header">
 
-  <h2>Login</h2>
-  <input type="text" id="loginUser" placeholder="Username">
-  <input type="password" id="loginPass" placeholder="Password">
-  <button onclick="login()">Login</button>
+    <h2 class="logo">Logo</h2>
 
-  <h2>Register</h2>
-  <input type="text" id="regUser" placeholder="Username">
-  <input type="password" id="regPass" placeholder="Password">
-  <button onclick="register()">Register</button>
+    <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
 
-  <p id="msg"></p>
+        <button id="openLogin">Login</button>
+    </nav>
+
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- LOGIN BOX -->
+<div class="modal" id="loginBox">
+
+    <span class="close" id="closeLogin">&times;</span>
+
+    <h2>Login</h2>
+
+    <form id="loginForm">
+
+        <div class="input">
+            <i class="fa fa-envelope"></i>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+        </div>
+
+        <div class="input">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+        </div>
+
+        <div class="options">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p class="switch">
+            Don't have an account?
+            <a href="#" id="showRegister">Register</a>
+        </p>
+
+    </form>
+
+</div>
+
+<!-- REGISTER BOX -->
+<div class="modal" id="registerBox">
+
+    <span class="close" id="closeRegister">&times;</span>
+
+    <h2>Registration</h2>
+
+    <form id="registerForm">
+
+        <div class="input">
+            <i class="fa fa-user"></i>
+            <input type="text" id="name" placeholder="Username" required>
+        </div>
+
+        <div class="input">
+            <i class="fa fa-envelope"></i>
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="input">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <label class="terms">
+            <input type="checkbox" required>
+            I agree to the terms & conditions
+        </label>
+
+        <button type="submit">Register</button>
+
+        <p class="switch">
+            Already have an account?
+            <a href="#" id="showLogin">Login</a>
+        </p>
+
+    </form>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
