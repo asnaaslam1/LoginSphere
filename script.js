@@ -1,88 +1,60 @@
-// OPEN ELEMENTS
-const openLogin = document.getElementById("openLogin");
+function showRegister() {
+document.getElementById("login").classList.add("hide");
+document.getElementById("register").classList.remove("hide");
+}
 
-const loginBox = document.getElementById("loginBox");
-const registerBox = document.getElementById("registerBox");
-const overlay = document.getElementById("overlay");
+function showLogin() {
+document.getElementById("register").classList.add("hide");
+document.getElementById("login").classList.remove("hide");
+}
 
-// BUTTONS
-const showRegister = document.getElementById("showRegister");
-const showLogin = document.getElementById("showLogin");
+const loginBtn = document.querySelector("#login .btn");
 
-const closeLogin = document.getElementById("closeLogin");
-const closeRegister = document.getElementById("closeRegister");
+if(loginBtn){
+loginBtn.addEventListener("click",function(){
 
-// OPEN LOGIN
-openLogin.onclick = () => {
-    loginBox.style.display = "block";
-    overlay.style.display = "block";
-};
+const email =
+document.querySelector("#login input[type='email']").value;
 
-// SWITCH TO REGISTER
-showRegister.onclick = (e) => {
-    e.preventDefault();
-    loginBox.style.display = "none";
-    registerBox.style.display = "block";
-};
+const password =
+document.querySelector("#login input[type='password']").value;
 
-// SWITCH TO LOGIN
-showLogin.onclick = (e) => {
-    e.preventDefault();
-    registerBox.style.display = "none";
-    loginBox.style.display = "block";
-};
-
-// CLOSE LOGIN
-closeLogin.onclick = () => {
-    loginBox.style.display = "none";
-    overlay.style.display = "none";
-};
-
-// CLOSE REGISTER
-closeRegister.onclick = () => {
-    registerBox.style.display = "none";
-    overlay.style.display = "none";
-};
-
-// CLICK OUTSIDE CLOSE
-overlay.onclick = () => {
-    loginBox.style.display = "none";
-    registerBox.style.display = "none";
-    overlay.style.display = "none";
-};
-
-// REGISTER DATA
-document.getElementById("registerForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const user = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value
-    };
-
-    localStorage.setItem("user", JSON.stringify(user));
-
-    alert("Registration Successful!");
-
-    registerBox.style.display = "none";
-    loginBox.style.display = "block";
+if(email==="" || password===""){
+alert("Please fill all fields");
+}
+else{
+alert("Login Successful");
+}
 });
+}
 
-// LOGIN CHECK
-document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
+const registerBtn =
+document.querySelector("#register .btn");
 
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+if(registerBtn){
+registerBtn.addEventListener("click",function(){
 
-    const user = JSON.parse(localStorage.getItem("user"));
+const username =
+document.querySelector("#register input[type='text']").value;
 
-    if(user && email === user.email && password === user.password){
-        alert("Login Successful!");
-        overlay.style.display = "none";
-        loginBox.style.display = "none";
-    } else {
-        alert("Invalid Details");
-    }
+const email =
+document.querySelector("#register input[type='email']").value;
+
+const password =
+document.querySelector("#register input[type='password']").value;
+
+const terms =
+document.querySelector("#register .terms input").checked;
+
+if(username==="" || email==="" || password===""){
+alert("Please fill all fields");
+}
+else if(!terms){
+alert("Accept Terms & Conditions");
+}
+else{
+alert("Registration Successful");
+showLogin();
+}
 });
+}

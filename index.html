@@ -1,21 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Register UI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoginSphere</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Your Header, Login & Register Code Here -->
+<header>
+<nav class="navbar">
 
-    <script src="script.js"></script>
+<div class="logo">
+<i class="fa-solid fa-user-shield"></i>
+LoginSphere
+</div>
+
+<ul class="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+
+<div class="container">
+
+<div class="form-box" id="login">
+
+<h2>Login</h2>
+
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" placeholder="Email">
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" placeholder="Password">
+</div>
+
+<div class="extra">
+<label>
+<input type="checkbox">
+Remember Me
+</label>
+
+<a href="#">Forgot Password?</a>
+</div>
+
+<button class="btn">Login</button>
+
+<p>
+Don't have an account?
+<a href="#" onclick="showRegister()">Register</a>
+</p>
+
+</div>
+
+<div class="form-box hide" id="register">
+
+<h2>Registration</h2>
+
+<div class="input-box">
+<i class="fa-solid fa-user"></i>
+<input type="text" placeholder="Username">
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" placeholder="Email">
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" placeholder="Password">
+</div>
+
+<label class="terms">
+<input type="checkbox">
+I agree to the Terms & Conditions
+</label>
+
+<button class="btn">Register</button>
+
+<p>
+Already have an account?
+<a href="#" onclick="showLogin()">Login</a>
+</p>
+
+</div>
+
+</div>
+
+<script src="js.js"></script>
 
 </body>
 </html>
