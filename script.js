@@ -1,29 +1,25 @@
-function openLogin(){
-document.getElementById("overlay").style.display="flex";
-showLogin();
-}
-
 function showLogin(){
-document.getElementById("loginBox").classList.remove("hide");
-document.getElementById("registerBox").classList.add("hide");
-document.getElementById("forgotBox").classList.add("hide");
+hideAll();
+document.getElementById("loginSection").classList.add("active");
 }
 
 function showRegister(){
-document.getElementById("loginBox").classList.add("hide");
-document.getElementById("registerBox").classList.remove("hide");
-document.getElementById("forgotBox").classList.add("hide");
+hideAll();
+document.getElementById("registerSection").classList.add("active");
 }
 
 function showForgot(){
-document.getElementById("loginBox").classList.add("hide");
-document.getElementById("registerBox").classList.add("hide");
-document.getElementById("forgotBox").classList.remove("hide");
+hideAll();
+document.getElementById("forgotSection").classList.add("active");
 }
 
-/* close when click outside */
-document.getElementById("overlay").addEventListener("click", function(e){
-if(e.target === this){
-document.getElementById("overlay").style.display="none";
+function showHome(){
+hideAll();
+document.getElementById("homeSection").classList.add("active");
 }
+
+function hideAll(){
+document.querySelectorAll(".section").forEach(sec=>{
+sec.classList.remove("active");
 });
+}
