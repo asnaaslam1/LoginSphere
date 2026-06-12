@@ -2,17 +2,17 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:system-ui;
 }
 
+/* BACKGROUND */
 .bg{
-background:url("assets/Picture-2.jpg");
-background-size:cover;
-height:100vh;
 position:fixed;
 width:100%;
+height:100%;
+background:url("assets/Picture-2.jpg") center/cover;
+filter:brightness(0.55);
 z-index:-1;
-filter:brightness(0.6);
 }
 
 /* NAVBAR */
@@ -21,80 +21,134 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 60px;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.75);
 position:fixed;
 width:100%;
 top:0;
+backdrop-filter:blur(10px);
 }
 
-.logo img{height:50px;}
+.logo img{
+height:45px;
+}
 
 .menu{
 display:flex;
 gap:20px;
-list-style:none;
 align-items:center;
 }
 
 .menu a{
 color:white;
 text-decoration:none;
+opacity:0.8;
+}
+
+.menu a:hover{
+opacity:1;
 }
 
 .login-btn{
 padding:8px 16px;
-background:gold;
+background:#ffcc00;
 border:none;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
+font-weight:bold;
 }
 
-/* SECTIONS */
-.section{
-display:none;
-padding-top:120px;
-text-align:center;
-color:white;
-}
-
-.section.active{
-display:block;
+/* CONTAINER */
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding-top:70px;
 }
 
 /* CARD */
 .card{
+width:360px;
 background:white;
-width:350px;
-margin:auto;
 padding:25px;
-border-radius:10px;
-color:black;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+display:none;
+animation:fade 0.3s ease;
+}
+
+.card.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+text-align:center;
+margin-bottom:15px;
 }
 
 /* INPUT */
 .input-box{
 display:flex;
 align-items:center;
-border:1px solid #ccc;
+border:1px solid #ddd;
 padding:10px;
-margin:10px 0;
-border-radius:6px;
+border-radius:8px;
+margin-bottom:12px;
 }
 
 .input-box i{
 margin-right:10px;
+color:#666;
+}
+
+.input-box input{
+border:none;
+outline:none;
+width:100%;
+}
+
+/* ROW */
+.row{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+margin-bottom:10px;
 }
 
 /* BUTTON */
 .btn{
 width:100%;
-padding:10px;
+padding:12px;
 background:black;
 color:white;
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
 }
 
+.btn:hover{
+background:#333;
+}
+
 /* TEXT */
-a{color:blue;cursor:pointer;}
+.switch{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+}
+
+.switch a{
+color:blue;
+cursor:pointer;
+}
+
+.terms{
+display:block;
+font-size:13px;
+margin-bottom:10px;
+}
