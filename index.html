@@ -3,122 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoginSphere Ultimate</title>
+<title>LoginSphere </title>
 
 <link rel="stylesheet" href="style.css">
+
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- Navbar -->
 <header class="navbar">
 
-<div class="logo">
-<img src="assets/Picture-1.png">
-</div>
+    <div class="logo">
+        <img src="assets/Picture-1.png" alt="Logo">
+        <span>LoginSphere</span>
+    </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-<button onclick="showLogin()">Login</button>
-</nav>
+    <nav>
+        <a href="#HOME">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+
+        <button class="login-btn" onclick="showLogin()">
+            Login
+        </button>
+    </nav>
 
 </header>
 
-<!-- BACKGROUND -->
-<div class="bg"></div>
+<!-- Background -->
+<div class="background"></div>
 
-<!-- CENTER WRAPPER -->
+
+<!-- Forms -->
 <div class="container">
 
-<!-- LOGIN -->
-<div class="card active" id="login">
+    <!-- Login -->
+    <div class="card" id="login">
 
-<h2>Welcome Back</h2>
-<p>Login to continue</p>
+        <h2>Welcome Back</h2>
+        <p>Login to continue</p>
 
-<div class="input">
-<i class="fa-solid fa-envelope"></i>
-<input type="email" placeholder="Email">
-</div>
+        <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email">
+        </div>
 
-<div class="input">
-<i class="fa-solid fa-lock"></i>
-<input type="password" placeholder="Password">
-</div>
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
 
-<div class="row">
-<label><input type="checkbox"> Remember me</label>
-<a onclick="showForgot()">Forgot?</a>
-</div>
+        <div class="row">
+            <label>
+                <input type="checkbox">
+                Remember Me
+            </label>
 
-<button class="btn">Login</button>
+            <a href="#" onclick="showForgot()">
+                Forgot Password?
+            </a>
+        </div>
 
-<p class="text">
-Don’t have account?
-<a onclick="showRegister()">Register</a>
-</p>
+        <button class="btn">Login</button>
 
-</div>
+        <p class="text">
+            Don't have an account?
+            <a href="#" onclick="showRegister()">Register</a>
+        </p>
 
-<!-- REGISTER -->
-<div class="card" id="register">
+    </div>
 
-<h2>Create Account</h2>
-<p>Join us today</p>
+    <!-- Register -->
+    <div class="card" id="register">
 
-<div class="input">
-<i class="fa-solid fa-user"></i>
-<input type="text" placeholder="Username">
-</div>
+        <h2>Registration</h2>
 
-<div class="input">
-<i class="fa-solid fa-envelope"></i>
-<input type="email" placeholder="Email">
-</div>
+        <div class="input-box">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Username">
+        </div>
 
-<div class="input">
-<i class="fa-solid fa-lock"></i>
-<input type="password" placeholder="Password">
-</div>
+        <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email">
+        </div>
 
-<label class="terms">
-<input type="checkbox"> I agree to Terms & Conditions
-</label>
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
 
-<button class="btn">Register</button>
+        <label class="terms">
+            <input type="checkbox">
+            I agree to the Terms & Conditions
+        </label>
 
-<p class="text">
-Already have account?
-<a onclick="showLogin()">Login</a>
-</p>
+        <button class="btn">Register</button>
 
-</div>
+        <p class="text">
+            Already have an account?
+            <a href="#" onclick="showLogin()">Login</a>
+        </p>
 
-<!-- FORGOT -->
-<div class="card" id="forgot">
+    </div>
 
-<h2>Reset Password</h2>
+    <!-- Forgot Password -->
+    <div class="card" id="forgot">
 
-<div class="input">
-<i class="fa-solid fa-envelope"></i>
-<input type="email" placeholder="Enter Email">
-</div>
+        <h2>Forgot Password</h2>
 
-<button class="btn">Send Reset Link</button>
+        <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Enter Email">
+        </div>
 
-<p class="text">
-Back to <a onclick="showLogin()">Login</a>
-</p>
+        <button class="btn">
+            Send Reset Link
+        </button>
 
-</div>
+        <p class="text">
+            Back to
+            <a href="#" onclick="showLogin()">Login</a>
+        </p>
+
+    </div>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
