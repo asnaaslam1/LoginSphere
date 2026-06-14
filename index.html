@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoginSphere</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
+<div class="background"></div>
+
 <header class="navbar">
-    <div class="logo">
-        <span>LoginSphere</span>
-    </div>
+    <div class="logo">LoginSphere</div>
+
     <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
+
         <button class="login-btn" onclick="showLogin()">
             Login
         </button>
     </nav>
 </header>
 
-<div class="background"></div>
-
 <div class="container">
+
     <!-- LOGIN -->
-    <div class="card active" id="login">
+    <div class="card" id="login">
         <h2>Welcome Back</h2>
         <p>Login to continue</p>
+
         <div class="input-box">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" id="loginEmail" placeholder="Email">
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email">
         </div>
+
         <div class="input-box">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" id="loginPassword" placeholder="Password">
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password">
         </div>
+
         <button class="btn" onclick="validateLogin()">
             Login
         </button>
+
         <p class="text">
             Don't have an account?
             <a href="#" onclick="showRegister()">Register</a>
         </p>
+
         <p class="text">
             <a href="#" onclick="showForgot()">Forgot Password?</a>
         </p>
@@ -53,21 +69,35 @@
     <!-- REGISTER -->
     <div class="card" id="register">
         <h2>Registration</h2>
+
         <div class="input-box">
             <i class="fa-solid fa-user"></i>
-            <input type="text" id="regUsername" placeholder="Username">
+            <input
+                type="text"
+                id="regUsername"
+                placeholder="Username">
         </div>
+
         <div class="input-box">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" id="regEmail" placeholder="Email">
+            <input
+                type="email"
+                id="regEmail"
+                placeholder="Email">
         </div>
+
         <div class="input-box">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" id="regPassword" placeholder="Password">
+            <input
+                type="password"
+                id="regPassword"
+                placeholder="Password">
         </div>
+
         <button class="btn" onclick="registerUser()">
             Register
         </button>
+
         <p class="text">
             Already have an account?
             <a href="#" onclick="showLogin()">Login</a>
@@ -77,31 +107,55 @@
     <!-- FORGOT PASSWORD -->
     <div class="card" id="forgot">
         <h2>Forgot Password</h2>
+
         <div class="input-box">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" id="forgotEmail" placeholder="Enter Email">
+            <input
+                type="email"
+                id="forgotEmail"
+                placeholder="Enter Email">
         </div>
+
         <button class="btn" onclick="resetPassword()">
             Send Reset Link
         </button>
+
         <p class="text">
-            <a href="#" onclick="showLogin()">Back To Login</a>
+            <a href="#" onclick="showLogin()">
+                Back To Login
+            </a>
         </p>
     </div>
+
 </div>
 
-<!-- MODAL POPUP - Un screenshot maari -->
-<div class="modal-overlay" id="alertModal" style="display:none">
-  <div class="modal-box">
-    <div class="modal-icon" id="modalIcon">!</div>
-    <h2 class="modal-title" id="modalTitle">Title</h2>
-    <p class="modal-text" id="modalText">Message</p>
-    <div class="modal-buttons">
-      <button class="btn-success" id="modalBtn" onclick="closeModal()">OK</button>
+<!-- MODAL -->
+<div class="modal-overlay" id="alertModal" style="display:none;">
+    <div class="modal-box">
+
+        <div class="modal-icon" id="modalIcon">!</div>
+
+        <h2 class="modal-title" id="modalTitle">
+            Title
+        </h2>
+
+        <p class="modal-text" id="modalText">
+            Message
+        </p>
+
+        <div class="modal-buttons">
+            <button
+                class="btn-success"
+                id="modalBtn"
+                onclick="closeModal()">
+                OK
+            </button>
+        </div>
+
     </div>
-  </div>
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
