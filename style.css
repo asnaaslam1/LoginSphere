@@ -1,229 +1,242 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-
 body{
-    height:100vh;
-    overflow:hidden;
+height:100vh;
+overflow:hidden;
 }
-
-/* Background */
-
 .background{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:url("assets/Picture-2.jpg") center center/cover no-repeat;
-    z-index:-2;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("assets/Picture-2.jpg") center/cover no-repeat;
+z-index:-1;
 }
-
-.background::after{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.3);
-    opacity:0;
-    transition:0.3s ease;
-}
-/* Navbar */
-
 .navbar{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    padding:15px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:100;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
-
-/* LOGO IMAGE FIX (better alignment) */
 .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
+font-size:24px;
+font-weight:bold;
+color:white;
 }
-
-/* better logo size */
-.logo img{
-    height:50px;
-    width:auto;
-}
-
-/* LoginSphere TEXT styling (matching glass UI) */
-.logo span{
-    font-size:20px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-
-    color:#ffffff;
-
-    text-shadow:
-    0 0 6px rgba(0,217,255,0.6),
-    0 0 12px rgba(0,217,255,0.4);
-}
-.logo img{
-    height:60px;
-}
-
 nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
+display:flex;
+gap:25px;
+align-items:center;
 }
-
 nav a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
+color:white;
+text-decoration:none;
 }
-
 .login-btn{
-    padding:10px 25px;
-    border:none;
-    border-radius:30px;
-    background:#00bfff;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+background:#00d9ff;
+color:white;
+cursor:pointer;
 }
-
-.login-btn:hover{
-    background:#0099cc;
-}
-
-/* Container */
-
 .container{
-    width:100%;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
-
-/* Form Card */
-
 .card{
-    display:none;
-    width:400px;
-    padding:35px;
-    border-radius:20px;
-
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(20px);
-
-    box-shadow:0 8px 32px rgba(0,0,0,0.3);
-
-    color:white;
+display:none;
+width:400px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+color:white;
 }
-
 .card.active{
-    display:block;
+display:block;
 }
-
-/* Headings */
-
-.card h2{
-    text-align:center;
-    margin-bottom:10px;
-}
-
-.card p{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-/* Inputs */
-
 .input-box{
-    position:relative;
-    margin-bottom:20px;
+position:relative;
+margin:15px 0;
 }
-
 .input-box i{
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
-    color:white;
+position:absolute;
+left:15px;
+top:15px;
 }
-
 .input-box input{
-    width:100%;
-    padding:14px 14px 14px 45px;
-    border:none;
-    outline:none;
-    border-radius:10px;
-    background:rgba(255,255,255,0.2);
-    color:white;
+width:100%;
+padding:14px 14px 14px 45px;
+border:none;
+border-radius:10px;
+outline:none;
 }
-
-.input-box input::placeholder{
-    color:#eee;
-}
-
-/* Row */
-
-.row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-    font-size:14px;
-}
-
-.row a{
-    color:#00d9ff;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.terms{
-    display:block;
-    margin-bottom:20px;
-    font-size:14px;
-}
-
-/* Buttons */
-
 .btn{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    background:#00bfff;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#00bfff;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
-
-.btn:hover{
-    background:#0099cc;
-}
-
-/* Bottom Text */
-
 .text{
-    margin-top:15px;
+margin-top:15px;
+text-align:center;
+}
+.text a{
+color:#00d9ff;
 }
 
-.text a{
-    color:#00d9ff;
-    text-decoration:none;
-    cursor:pointer;
-} 
-.background.blur::after{
-    backdrop-filter: blur(8px);
-    opacity:1;
+/* MODAL STYLE - Un screenshot exact match */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
+.modal-box {
+  background: white;
+  padding: 45px 35px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 380px;
+  width: 85%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+.modal-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: bold;
+  border: 3px solid;
+}
+.modal-icon.success {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+.modal-icon.error {
+  border-color: #f44336;
+  color: #f44336;
+}
+.modal-title {
+  font-size: 26px;
+  margin: 15px 0 12px;
+  color: #333;
+  font-weight: 600;
+}
+.modal-text {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+}
+.btn-success {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 120px;
+  background: #28a745;
+  color: white;
+}
+.btn-success:hover {
+  opacity: 0.9;
+}
+
+/* Old success/error box remove panniten */
+.success-box, .error-box { display: none; }
+
+.background {
+  animation: zoom 20s ease-in-out infinite alternate;
+}
+@keyframes zoom {
+ 0% { transform: scale(1); }
+ 100% { transform: scale(1.05); }
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
+}
+body{height:100vh;overflow:hidden;color:white}
+
+/* Mountain background - un screenshot maari */
+.background{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:url("assets/Picture-2.jpg") center/cover no-repeat;
+filter:brightness(0.6);
+z-index:-1;
+animation:zoom 20s ease-in-out infinite alternate;
+}
+@keyframes zoom{0%{transform:scale(1)}100%{transform:scale(1.05)}}
+
+.navbar{position:absolute;top:0;left:0;width:100%;padding:20px 60px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:bold}
+nav{display:flex;gap:25px;align-items:center}
+nav a{color:white;text-decoration:none}
+.login-btn{padding:10px 20px;border:none;border-radius:25px;background:#00d9ff;color:white;cursor:pointer;transition:0.3s}
+.login-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,217,255,0.4)}
+
+.container{height:100vh;display:flex;justify-content:center;align-items:center}
+
+/* Glass card - un screenshot blur effect */
+.card{
+display:none;width:400px;padding:40px 35px;border-radius:20px;
+background:rgba(255,255,255,0.12);backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(0,0,0,0.4);
+transform:translateY(30px);opacity:0
+}
+.card.active{display:block;animation:slideUp 0.6s ease forwards}
+@keyframes slideUp{to{transform:translateY(0);opacity:1}}
+
+.card h2{font-size:28px;margin-bottom:5px;text-align:center}
+.card p{text-align:center;margin-bottom:25px;opacity:0.8}
+
+.input-box{position:relative;margin:15px 0}
+.input-box i{position:absolute;left:15px;top:16px;opacity:0.6}
+.input-box input{
+width:100%;padding:14px 14px 14px 45px;border:none;border-radius:8px;
+background:rgba(255,255,255,0.9);color:#333;font-size:15px;outline:none;
+transition:all 0.3s ease
+}
+.input-box input:focus{background:white;box-shadow:0 0 0 3px rgba(0,191,255,0.4);transform:scale(1.02)}
+
+.btn{width:100%;padding:14px;border:none;border-radius:8px;background:#00bfff;color:white;
+font-weight:600;font-size:16px;cursor:pointer;transition:all 0.3s ease}
+.btn:hover{background:#0099cc;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,191,255,0.5)}
+
+.text{margin-top:15px;text-align:center;font-size:14px}
+.text a{color:#00d9ff;text-decoration:none;font-weight:500}
+.text a:hover{text-decoration:underline}
+
