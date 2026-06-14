@@ -29,9 +29,7 @@ function showForgot() {
     forgot.classList.add("active");
 }
 
-// DO NOT use showLogin() here
-// Login box will stay hidden until Login button is clicked
-
+// Modal Popup
 function showModal(title, text, isSuccess) {
     const modal = document.getElementById("alertModal");
     const icon = document.getElementById("modalIcon");
@@ -45,7 +43,7 @@ function showModal(title, text, isSuccess) {
     if (isSuccess) {
         icon.innerHTML = "✓";
         icon.className = "modal-icon success";
-        btn.innerText = "OK";
+        btn.innerText = "Logout"; // Un screenshot maari Logout
     } else {
         icon.innerHTML = "✗";
         icon.className = "modal-icon error";
@@ -56,7 +54,13 @@ function showModal(title, text, isSuccess) {
 }
 
 function closeModal() {
-    document.getElementById("alertModal").style.display = "none";
+    const modal = document.getElementById("alertModal");
+    modal.style.display = "none";
+    
+    // Success modal la Logout click panna page reload aagum
+    if(modalTitle.innerText.includes("Welcome")){
+        location.reload();
+    }
 }
 
 function validateLogin() {
@@ -64,28 +68,25 @@ function validateLogin() {
     const password = document.getElementById("loginPassword").value.trim();
 
     if (email === "" || password === "") {
-        showModal(
-            "Empty Fields!",
-            "Please enter email and password",
-            false
-        );
+        showModal("Empty Fields!", "Please enter email and password", false);
         return;
     }
 
-    document.querySelector(".container").innerHTML = `
-        <div class="card active">
-            <h2>🎉 Welcome ${userData.username}</h2>
-            <p>Login Successful</p>
-
-            <div style="margin-top:20px;">
-                <p><strong>Email:</strong> ${email}</p>
-            </div>
-
-            <button class="btn" onclick="logoutUser()" style="margin-top:20px;">
-                Logout
-            </button>
-        </div>
-    `;
+    // Credential check
+    if(email === userData.email && password === userData.password){
+        // Modal la details kaatum - page replace pannadha
+        showModal(
+            "🎉 Welcome Asna!" , 
+            "Login Successful ✅", 
+            true
+        );
+    } else {
+        showModal(
+            "Login Failed!", 
+            "Invalid email or password\n📧 You entered: " + email, 
+            false
+        );
+    }
 }
 
 function registerUser() {
@@ -94,46 +95,25 @@ function registerUser() {
     const password = document.getElementById("regPassword").value.trim();
 
     if (username === "" || email === "" || password === "") {
-        showModal(
-            "Registration Failed!",
-            "Please fill all fields",
-            false
-        );
+        showModal("Registration Failed!", "Please fill all fields", false);
         return;
     }
 
-    userData = {
-        username,
-        email,
-        password
-    };
-
-    showModal(
-        "Register Successful!",
-        "Account created successfully ✅",
-        true
-    );
+    userData = { username, email, password };
+    showModal("Register Successful!", "Account created successfully ✅\nUsername: " + username, true);
 }
 
 function resetPassword() {
     const email = document.getElementById("forgotEmail").value.trim();
 
     if (email === "") {
-        showModal(
-            "Empty Field!",
-            "Please enter your email",
-            false
-        );
+        showModal("Empty Field!", "Please enter your email", false);
         return;
     }
 
-    showModal(
-        "Reset Link Sent!",
-        "Check your email for reset link ✅",
-        true
-    );
-}
-
-function logoutUser() {
-    location.reload();
+    if(email === userData.email){
+        showModal("Reset Link Sent!", "Check your email for reset link ✅", true);
+    } else {
+        showModal("Email Not Found!", "This email is not registered", false);
+    }
 }
